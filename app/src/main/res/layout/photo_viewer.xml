@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+    tools:context=".PhotoScene">
+
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="65dp" android:background="@color/white" android:elevation="4dp" android:paddingTop="16dp" android:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView android:id="@+id/photo_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="monospace" android:textSize="16dp"
+            android:text="Album Name : AlbumName" android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- This LinearLayout is for the buttons at the top. -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginBottom="5dp" android:orientation="horizontal" android:gravity="center_horizontal">
+
+        <Button android:id="@+id/prev_photo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:onClick="prevPhoto" android:text="Prev" android:layout_marginLeft="5dp" android:layout_marginRight="2.5dp" />
+        <Button android:id="@+id/next_photo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:onClick="nextPhoto" android:text="Next" android:layout_marginLeft="2.5dp" android:layout_marginRight="5dp" />
+    </LinearLayout>
+
+    <ImageView android:id="@+id/select_image" android:layout_width="400dp" android:layout_height="300dp" android:layout_marginStart="5dp" android:layout_marginEnd="5dp" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="45dp" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="45dp" android:layout_weight="1" android:fontFamily="monospace" android:gravity="center_vertical|center_horizontal" android:text="Location :" android:textSize="16dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="45dp" android:layout_weight="1" android:fontFamily="monospace" android:gravity="center_vertical|center_horizontal" android:onClick="editLocation" android:text="Unknown" android:textSize="16dp" />
+    </LinearLayout>
+
+    <Button android:id="@+id/insert_person" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Insert Person" android:onClick="insertPerson"/>
+    <Button android:id="@+id/delete_person" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Delete Person" android:onClick="deletePerson" />
+
+    <ListView android:id="@+id/personTags" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" android:listSelector="@color/gray" />
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" tools:context=".AlbumScene">
+
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar" android:layout_width="match_parent" android:layout_height="65dp" android:background="@color/white" android:elevation="4dp"
+        android:paddingTop="16dp" android:theme="@style/ThemeOverlay.AppCompat.Light" app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView android:id="@+id/album_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="monospace" android:textSize="16dp"
+            android:text="Album Name : AlbumName" android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- This LinearLayout is for the buttons at the top. -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp" android:layout_marginBottom="5dp">
+
+        <Button android:id="@+id/upload_photo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload Photo" android:onClick="uploadPhoto" />
+        <Button android:id="@+id/delete_photo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Delete Photo" android:onClick="deletePhoto" />
+        <Button android:id="@+id/open_photo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Open Photo" android:onClick="openPhoto"/>
+        <Button android:id="@+id/move_photo" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Move Photo" android:onClick="movePhoto" />
+    </LinearLayout>
+
+    <GridView android:id="@+id/photosView" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:columnWidth="90dp" android:numColumns="auto_fit" android:verticalSpacing="10dp" android:horizontalSpacing="10dp" android:stretchMode="columnWidth" android:gravity="center" android:listSelector="@color/gray" />
+</LinearLayout>
