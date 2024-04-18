@@ -7,7 +7,7 @@
         android:paddingTop="16dp" android:theme="@style/ThemeOverlay.AppCompat.Light" app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <TextView android:id="@+id/search_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="monospace" android:textSize="16dp"
-            android:text="Photos App : 🔍 Search" android:textStyle="bold" />
+            android:text="Android Photos Application > \n🔍 Search" />
     </androidx.appcompat.widget.Toolbar>
 
     <!-- This LinearLayout is for the buttons at the top. -->

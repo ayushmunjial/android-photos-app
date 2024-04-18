@@ -16,7 +16,11 @@ import java.io.Serializable; import java.util.ArrayList;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public class User implements Serializable { private static final long serialVersionUID = -6777887675960638788L; private User() {}
-    private static User user = new User(); private ArrayList<Album> albums = new ArrayList<Album>();
+    private static User user = new User(); private ArrayList<Album> albums = new ArrayList<Album>(); public static String path = "";
+
+    //----------------------------------------------------------------------------------------------------------------------------------
+
+    /** @param newUser The user object read from file. */ public static void setInstance(User newUser) { user = newUser; }
 
     //----------------------------------------------------------------------------------------------------------------------------------
 

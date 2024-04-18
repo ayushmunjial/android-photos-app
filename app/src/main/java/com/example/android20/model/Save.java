@@ -17,27 +17,27 @@ import java.io.IOException; import java.io.ObjectInputStream; import java.io.Obj
 
 public class Save {
     //----------------------------------------------------------------------------------------------------------------------------------
-    /** Reads and deserializes the User object from a file. This method is used to retrieve user data stored in a file when application
+    /**
+     * Reads and deserializes the User object from a file. This method is used to retrieve user data stored in a file when application
      * starts or when user data needs to be refreshed.
-     * @return User A saved User object deserialized from the file archive.dat.
      * @throws IOException If there is any error in reading from the given file.
-     * @throws ClassNotFoundException If the class of a serialized object cannot be found. */
+     * @throws ClassNotFoundException If the class of a serialized object cannot be found.
+     */
     //----------------------------------------------------------------------------------------------------------------------------------
 
-    public static User readFromFile() throws IOException, ClassNotFoundException { // To read from the archive file.
-        ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(Paths.get("archive.dat")));
-        User user = (User)ois.readObject(); ois.close(); return user;
+    public static void readFromFile() throws IOException, ClassNotFoundException {
+        ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(Paths.get(User.path))); User.setInstance((User)ois.readObject());
+        ois.close();
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------
     /** Serializes and writes the User object to a file. This method is used to save user data to a file, allowing persistence of data
      * across application sessions.
-     * @param user User object to be serialized, saved to file archive.dat.
      * @throws IOException If there is any error writing to the given file. */
     //----------------------------------------------------------------------------------------------------------------------------------
 
-    public static void saveToFile(User user) throws IOException, ClassNotFoundException { // To save user to archive.
-        ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(Paths.get("archive.dat"))); oos.writeObject(user); oos.close();
+    public static void saveToFile() throws IOException, ClassNotFoundException { User user = User.getInstance();
+        ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(Paths.get(User.path))); oos.writeObject(user); oos.close();
     }
 }
 

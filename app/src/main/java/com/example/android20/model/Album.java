@@ -36,7 +36,7 @@ public class Album implements Serializable { private static final long serialVer
 
     //----------------------------------------------------------------------------------------------------------------------------------
 
-    /** @return String The representation of Album object. */ @Override public String toString() { return "Name: " + albumName + " --> Items: " + totalItems(); }
+    /** @return String The representation of Album object. */ @Override public String toString() { return "Name: " + albumName + " | Items: " + totalItems(); }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

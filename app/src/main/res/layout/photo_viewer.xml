@@ -7,7 +7,7 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <TextView android:id="@+id/photo_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:fontFamily="monospace" android:textSize="16dp"
-            android:text="Album Name : AlbumName" android:textStyle="bold" />
+            android:text="Android Photos Application > \n🎞 Album" />
     </androidx.appcompat.widget.Toolbar>
 
     <!-- This LinearLayout is for the buttons at the top. -->
