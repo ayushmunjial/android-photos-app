@@ -15,7 +15,7 @@
 
         <Button android:id="@+id/create_album" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Create Album" android:onClick="createAlbum" />
         <Button android:id="@+id/delete_album" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Delete Album" android:onClick="deleteAlbum" />
-        <Button android:id="@+id/open_album" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Open Album" android:onClick="openAlbum"/>
+        <Button android:id="@+id/open_album" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Open Album" android:onClick="openAlbum" />
         <Button android:id="@+id/rename_album" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Rename Album" android:onClick="renameAlbum" />
     </LinearLayout>
 

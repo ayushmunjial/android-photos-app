@@ -6,13 +6,13 @@
         android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.Android20">
 
         <!-- SearchScene, parent is MainActivity -->
-        <activity android:name=".SearchScene" android:exported="false" android:parentActivityName=".MainActivity"> </activity>
+        <activity android:name=".SearchScene" android:exported="false" android:parentActivityName="com.example.android20.MainActivity"> </activity>
 
         <!-- PhotoScene, parent is AlbumScene -->
-        <activity android:name=".PhotoScene" android:exported="false" android:parentActivityName=".AlbumScene"> </activity>
+        <activity android:name=".PhotoScene" android:exported="false" android:parentActivityName="com.example.android20.AlbumScene"> </activity>
 
         <!-- AlbumScene, parent is MainActivity -->
-        <activity android:name=".AlbumScene" android:exported="false" android:parentActivityName=".MainActivity"> </activity>
+        <activity android:name=".AlbumScene" android:exported="false" android:parentActivityName="com.example.android20.MainActivity"> </activity>
 
         <!-- MainActivity with launcher filter -->
         <activity android:name=".MainActivity" android:exported="true">
