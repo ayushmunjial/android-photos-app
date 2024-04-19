@@ -41,11 +41,12 @@ public class PhotoScene extends AppCompatActivity { Context context = this; Albu
         Bundle bundle = getIntent().getExtras(); if (bundle != null) { String albumName = bundle.getString("Album");
             for (Album a: User.getInstance().getAlbums()) { if (a.getAlbumName().equals(albumName)) { album = a; break; }}
 
-            index = bundle.getInt("Index"); Uri pathToPhoto = Uri.parse(bundle.getString("Photo"));
-            Photo bundlePhoto = new Photo(pathToPhoto);
-            for (Photo p: album.getPhotos()) { if (p.getPathToPhoto().equals(bundlePhoto.getPathToPhoto())) { photo = p; break; }}
+            index = bundle.getInt("Index"); String pathToPhoto = bundle.getString("Photo");
 
-            TextView photo_title = findViewById(R.id.album_title);
+            for (Photo p: album.getPhotos()) { if (p.toString().equals(pathToPhoto)) { photo = p; break; }}
+            photo = album.getPhotos().get(index);
+
+            TextView photo_title = findViewById(R.id.photo_title);
             String title = "Android Photos Application > \n🎞️ " + albumName; photo_title.setText(title);
         }
 
