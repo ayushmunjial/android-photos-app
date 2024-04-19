@@ -21,11 +21,13 @@
 
     <LinearLayout android:layout_width="match_parent" android:layout_height="45dp" android:layout_marginTop="5dp" android:layout_marginBottom="5dp" android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:orientation="horizontal">
 
-        <TextView android:layout_width="wrap_content" android:layout_height="45dp" android:layout_weight="1" android:fontFamily="monospace" android:gravity="center_vertical|center_horizontal" android:text="Location :" android:textSize="16dp" />
-        <TextView android:layout_width="wrap_content" android:layout_height="45dp" android:layout_weight="1" android:fontFamily="monospace" android:gravity="center_vertical|center_horizontal" android:onClick="editLocation" android:text="Unknown" android:textSize="16dp" />
+        <TextView android:layout_width="wrap_content" android:layout_height="45dp" android:layout_weight="1" android:fontFamily="monospace" android:gravity="center_vertical|center_horizontal" android:text="Location:" android:textSize="16dp" />
+        <TextView android:id="@+id/location_text" android:layout_width="wrap_content" android:layout_height="45dp" android:layout_weight="1" android:fontFamily="monospace" android:gravity="center_vertical|center_horizontal" android:text="Unknown" android:textSize="16dp" />
+
+        <Button android:id="@+id/edit_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="Edit" android:onClick="editLocation" />
     </LinearLayout>
 
-    <Button android:id="@+id/insert_person" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Insert Person" android:onClick="insertPerson"/>
+    <Button android:id="@+id/insert_person" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Insert Person" android:onClick="insertPerson" />
     <Button android:id="@+id/delete_person" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Delete Person" android:onClick="deletePerson" />
 
     <ListView android:id="@+id/personTags" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" android:listSelector="@color/gray" />

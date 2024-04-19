@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity { Context context = this; Li
         try { Save.readFromFile(); } catch (Exception e) { Log.i("FILEF", "Error reading the file."); }
 
         albumsView = findViewById(R.id.albumsView);
-        albumsView.setAdapter(new ArrayAdapter<Album>(this, R.layout.album_textview, User.getInstance().getAlbums()));
+        albumsView.setAdapter(new ArrayAdapter<Album>(this, R.layout.lists_textview, User.getInstance().getAlbums()));
 
         albumsView.setOnItemClickListener((parent, view, position, id) -> curr_pos = position);
     }
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity { Context context = this; Li
     public void createAlbum(View view) { LayoutInflater inflater = LayoutInflater.from(context);
         final View customLayout = inflater.inflate(R.layout.custom_popups, null);
 
-        TextView alertMessage = customLayout.findViewById(R.id.alertMessage); alertMessage.setText("**Addding new Album**");
+        TextView alertMessage = customLayout.findViewById(R.id.alertMessage); alertMessage.setText("**Adding a new Album**");
         EditText textEditView = customLayout.findViewById(R.id.textEditView); textEditView.setHint("Enter new album's name.");
 
         Button positiveButton = customLayout.findViewById(R.id.positiveButton); positiveButton.setText("Save");
@@ -101,10 +101,10 @@ public class MainActivity extends AppCompatActivity { Context context = this; Li
     //----------------------------------------------------------------------------------------------------------------------------------
 
     public void openAlbum(View view) { if (curr_pos == -1 || curr_pos >= User.getInstance().getAlbums().size()) { return; }
-        Bundle bundle = new Bundle(); String album = User.getInstance().getAlbums().get(curr_pos).toString();
+        Album album = User.getInstance().getAlbums().get(curr_pos); Bundle bundle = new Bundle();
 
-        bundle.putString("Album", album); Intent intent = new Intent(this, AlbumScene.class); intent.putExtras(bundle);
-        startActivity(intent);
+        bundle.putString("Album", album.getAlbumName()); Intent intent = new Intent(this, AlbumScene.class);
+        intent.putExtras(bundle); startActivity(intent);
     }
 
     //----------------------------------------------------------------------------------------------------------------------------------

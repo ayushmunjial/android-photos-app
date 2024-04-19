@@ -18,8 +18,8 @@ public class ImageAdapter extends ArrayAdapter<Photo> { public ImageAdapter(Cont
     @Override public View getView(int curr_pos, View convertView, ViewGroup parent) { ImageView imageView;
 
         if (convertView == null) {  // if it's not recycled, initialize some attributes
-            imageView = new ImageView(getContext()); imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP); imageView.setPadding(8, 8, 8, 8);
+            imageView = new ImageView(getContext()); imageView.setLayoutParams(new GridView.LayoutParams(235, 235));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP); imageView.setPadding(10, 10, 10, 10);
         }
 
         else { imageView = (ImageView) convertView; }
