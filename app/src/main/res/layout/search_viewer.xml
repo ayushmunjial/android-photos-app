@@ -13,6 +13,8 @@
     <!-- This LinearLayout is for the buttons at the top. -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="10dp" android:layout_marginBottom="5dp">
 
+        <AutoCompleteTextView android:id="@+id/searchTags" android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="monospace" android:gravity="center" android:hint="Search Location and Person Tags" />
+
         <Button android:id="@+id/insert_tag" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Insert Tag" android:onClick="insertTag" />
         <Button android:id="@+id/delete_tag" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Delete Tag" android:onClick="deleteTag" />
     </LinearLayout>
@@ -23,7 +25,7 @@
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginStart="5dp" android:layout_marginEnd="10dp">
 
-            <RadioGroup android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:orientation="horizontal" android:gravity="center">
+            <RadioGroup android:id="@+id/radio_group" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="3" android:orientation="horizontal" android:gravity="center">
 
                 <RadioButton android:id="@+id/radio_and" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.75" android:text="AND" />
                 <RadioButton android:id="@+id/radio_or" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.75" android:text="OR" />
@@ -33,12 +35,6 @@
             <Button android:id="@+id/search_button" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.75" android:text="Search" android:onClick="searchAll" />
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="5dp" android:layout_marginBottom="5dp">
-
-        <AutoCompleteTextView android:id="@+id/searchTags" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Search Location and Person Tags"
-            android:fontFamily="monospace" android:gravity="center_vertical|center_horizontal" />
     </LinearLayout>
 
     <GridView android:id="@+id/photosView" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:layout_width="fill_parent" android:layout_height="fill_parent"

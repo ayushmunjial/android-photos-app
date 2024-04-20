@@ -79,7 +79,7 @@ public class AlbumScene extends AppCompatActivity { Context context = this; Albu
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context); dialogBuilder.setView(customLayout);
         AlertDialog alertDialog = dialogBuilder.create();
 
-        positiveButton.setOnClickListener(v -> { String albumName = textEditView.getText().toString().trim();
+        positiveButton.setOnClickListener(v -> {
 
             album.getPhotos().remove(photo); photosView.invalidateViews();
 

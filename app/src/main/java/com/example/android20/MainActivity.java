@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity { Context context = this; Li
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context); dialogBuilder.setView(customLayout);
         AlertDialog alertDialog = dialogBuilder.create();
 
-        positiveButton.setOnClickListener(v -> { String albumName = textEditView.getText().toString().trim();
+        positiveButton.setOnClickListener(v -> {
 
             User.getInstance().getAlbums().remove(album); albumsView.invalidateViews();
 
