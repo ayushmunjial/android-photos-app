@@ -1,34 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-package com.example.android20;
+package com.example.android20; import com.example.android20.model.Album; import com.example.android20.model.Photo;
+import com.example.android20.model.User;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.Window;
-import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.GridView;
-import android.widget.ListView;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import com.example.android20.model.Album;
-import com.example.android20.model.Photo;
-import com.example.android20.model.User;
-
-import java.util.ArrayList;
+import android.app.AlertDialog; import android.content.Context; import android.os.Bundle; import android.view.LayoutInflater;
+import android.view.View; import android.view.Window; import android.widget.ArrayAdapter; import android.widget.AutoCompleteTextView;
+import android.widget.Button; import android.widget.EditText; import android.widget.GridView; import android.widget.ListView;
+import android.widget.RadioGroup; import android.widget.TextView; import android.widget.Toast; import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity; import androidx.appcompat.widget.Toolbar; import java.util.ArrayList;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /**
@@ -56,7 +37,7 @@ public class SearchScene extends AppCompatActivity { Context context = this; Lis
         searchTags = findViewById(R.id.searchTags); ArrayList<String> allTags = new ArrayList<>();
 
         for (Album a : User.getInstance().getAlbums()) { for (Photo p : a.getPhotos()) {
-                    for (String t : p.getPersonTags()) { if (!allTags.contains(t)) { allTags.add(t); }}
+                    for (String t : p.getPersonTags()) { if (!allTags.contains(t.toLowerCase())) { allTags.add(t.toLowerCase()); }}
                     if (!p.getLocation().isEmpty()) { if (!allTags.contains(p.getLocation())) { allTags.add(p.getLocation()); }}
             }
         }
@@ -67,7 +48,7 @@ public class SearchScene extends AppCompatActivity { Context context = this; Lis
     //----------------------------------------------------------------------------------------------------------------------------------
 
     public void insertTag(View view) { EditText entry = findViewById(R.id.searchTags);
-        AutoCompleteTextView searchTags = findViewById(R.id.searchTags); String label = entry.getText().toString().trim();
+        AutoCompleteTextView searchTags = findViewById(R.id.searchTags); String label = entry.getText().toString().trim().toLowerCase();
 
         if (label.isEmpty()) { Toast.makeText(context, "Tag entered is invalid.", Toast.LENGTH_SHORT).show(); return; }
 
@@ -83,7 +64,6 @@ public class SearchScene extends AppCompatActivity { Context context = this; Lis
     //----------------------------------------------------------------------------------------------------------------------------------
 
     public void deleteTag(View view) { if (curr_pos == -1 || curr_pos >= tags.size()) { return; }
-
         String label = tags.get(curr_pos); LayoutInflater inflater = LayoutInflater.from(context);
         final View customLayout = inflater.inflate(R.layout.custom_popups, null);
 

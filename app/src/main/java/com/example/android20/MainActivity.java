@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity { Context context = this; Li
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context); dialogBuilder.setView(customLayout);
         AlertDialog alertDialog = dialogBuilder.create();
 
-        positiveButton.setOnClickListener(v -> { String albumName = textEditView.getText().toString().trim();
+        positiveButton.setOnClickListener(v -> { String albumName = textEditView.getText().toString().trim().toLowerCase();
 
             if (albumName.isEmpty()) { Toast.makeText(context, "Album name is invalid.", Toast.LENGTH_SHORT).show(); return; }
             Album newAlbum = new Album(albumName);
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity { Context context = this; Li
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context); dialogBuilder.setView(customLayout);
         AlertDialog alertDialog = dialogBuilder.create();
 
-        positiveButton.setOnClickListener(v -> { String albumName = textEditView.getText().toString().trim();
+        positiveButton.setOnClickListener(v -> { String albumName = textEditView.getText().toString().trim().toLowerCase();
 
             if (albumName.isEmpty()) { Toast.makeText(context, "Album name is invalid.", Toast.LENGTH_SHORT).show(); return; }
 

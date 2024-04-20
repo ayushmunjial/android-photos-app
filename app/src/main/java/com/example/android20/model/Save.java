@@ -20,7 +20,7 @@ public class Save {
     /**
      * Reads and deserializes the User object from a file. This method is used to retrieve user data stored in a file when application
      * starts or when user data needs to be refreshed.
-     * @throws IOException If there is any error in reading from the given file.
+     * @throws IOException           If there is any error in reading from the given file.
      * @throws ClassNotFoundException If the class of a serialized object cannot be found.
      */
     //----------------------------------------------------------------------------------------------------------------------------------

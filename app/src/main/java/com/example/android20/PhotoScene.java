@@ -92,7 +92,7 @@ public class PhotoScene extends AppCompatActivity { Context context = this; Albu
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context); dialogBuilder.setView(customLayout);
         AlertDialog alertDialog = dialogBuilder.create();
 
-        positiveButton.setOnClickListener(v -> { String location = textEditView.getText().toString().trim();
+        positiveButton.setOnClickListener(v -> { String location = textEditView.getText().toString().trim().toLowerCase();
 
             photo.setLocation(location);
             TextView location_text = findViewById(R.id.location_text); location_text.setText(photo.getLocation());
@@ -120,7 +120,7 @@ public class PhotoScene extends AppCompatActivity { Context context = this; Albu
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context); dialogBuilder.setView(customLayout);
         AlertDialog alertDialog = dialogBuilder.create();
 
-        positiveButton.setOnClickListener(v -> { String person = textEditView.getText().toString().trim();
+        positiveButton.setOnClickListener(v -> { String person = textEditView.getText().toString().trim().toLowerCase();
 
             if (person.isEmpty()) { Toast.makeText(context, "Person name is invalid.", Toast.LENGTH_SHORT).show(); return; }
 

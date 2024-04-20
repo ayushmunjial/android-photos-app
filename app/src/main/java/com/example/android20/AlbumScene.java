@@ -46,6 +46,12 @@ public class AlbumScene extends AppCompatActivity { Context context = this; Albu
                         Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 Photo newPhoto = new Photo(uri);
 
+                for (Album a: User.getInstance().getAlbums()) {
+                    for (Photo p: a.getPhotos()) { if (p.getPathToPhoto().equals(newPhoto.getPathToPhoto())) {
+                            Toast.makeText(context, "Photo in other album.", Toast.LENGTH_SHORT).show(); return; }
+                    }
+                }
+
                 for (Photo p: album.getPhotos()) { if (p.getPathToPhoto().equals(newPhoto.getPathToPhoto())) {
                     Toast.makeText(context, "Photo already exists.", Toast.LENGTH_SHORT).show(); return; }}
 
@@ -116,12 +122,12 @@ public class AlbumScene extends AppCompatActivity { Context context = this; Albu
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context); dialogBuilder.setView(customLayout);
         AlertDialog alertDialog = dialogBuilder.create();
 
-        positiveButton.setOnClickListener(v -> { String albumName = textEditView.getText().toString().trim(); boolean contains = false;
+        positiveButton.setOnClickListener(v -> { String albumName = textEditView.getText().toString().trim().toLowerCase();
+            boolean contains = false;
 
             if (albumName.isEmpty()) { Toast.makeText(context, "Album name is invalid.", Toast.LENGTH_SHORT).show(); return; }
 
             Album destAlbum = new Album(albumName);
-
             for (Album a: User.getInstance().getAlbums()) { if (a.getAlbumName().equals(destAlbum.getAlbumName())) { contains = true; }}
 
             if (!contains) { Toast.makeText(context, "Album name is invalid.", Toast.LENGTH_SHORT).show(); return; }
