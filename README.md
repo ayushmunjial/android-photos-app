@@ -8,7 +8,7 @@
 
 ## 📌 Overview
 
-The **Android Photos App** is a fully functional mobile application built for Android devices, enabling users to manage personal photo albums, apply custom tags, and search efficiently across their media. Developed within Rutgers University's Mobile App Development program, the app features a smooth and responsive user experience tailored for both phones and tablets.
+The **Android Photos App** is a fully functional mobile application built for Android devices, enabling users to manage personal photo albums, apply custom tags, and search efficiently across their media. the app features a smooth and responsive user experience tailored for both phones and tablets.
 
 Engineered with high data persistence through advanced serialization, the app ensures user data remains intact across sessions. It also features optimized search functionality using tag-based algorithms to improve retrieval performance.
 
@@ -49,7 +49,7 @@ Engineered with high data persistence through advanced serialization, the app en
    git clone https://github.com/ayushmunjial/android-photos-app.git
    ```
 2. **Open in Android Studio**:
-   Open  project in Android Studio (latest stable version recommended) and allow Gradle to sync.
+   Open the project in Android Studio (latest stable version recommended) and allow Gradle to sync.
 3. **Run & Login**:
    Connect an Android device or launch an emulator, press **Run** (`Shift + F10`), then log in as **admin** or create new users via the admin interface.
 
