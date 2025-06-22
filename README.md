@@ -67,3 +67,9 @@ Engineered with high data persistence through advanced serialization, the app en
 
 This app was engineered based on industry-standard Android practices and course specifications.  
 👉 _[Wikipedia – Android (operating system)](https://en.wikipedia.org/wiki/Android_(operating_system))_
+
+---
+
+## ⚖️ License
+
+For private and professional portfolio use only. All rights reserved by Ayush Munjial.
